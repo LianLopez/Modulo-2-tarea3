@@ -29,45 +29,32 @@ statistics["democrats-average-votes-with-party"] = Math.round(democrats.map(memb
 statistics["republicans-average-votes-with-party"] = Math.round(republicans.map(member => member.votes_with_party_pct).reduce((memberAnterior, member) => memberAnterior + member) / republicans.length)
 statistics["independents-average-votes-with-party"] = Math.round(independents.map(member => member.votes_with_party_pct).reduce((memberAnterior, member) => memberAnterior + member) / independents.length)
 
-function generarArrayLoyal() {
+function generarArrayLoyal(ascendente) {
 	var limite = Math.round(members.length * 10) / 100
-	members.sort(function (a, b) {
-		return (a.votes_with_party_pct - b.votes_with_party_pct)
-	})
-	var i = 0
-	while (i < limite || members[i].votes_with_party_pct == members[i - 1].votes_with_party_pct) {
-		statistics["least-loyal"].push(members[i])
-		i++
-	}
-	members.sort(function (a, b) {
-		return (b.votes_with_party_pct - a.votes_with_party_pct)
-	})
+	members.sort(
+		(a, b) => ascendente ? b.votes_with_party_pct - a.votes_with_party_pct : a.votes_with_party_pct - bvotes_with_party_pct)
 	i = 0
 	while (i < limite || members[i].votes_with_party_pct == members[i - 1].votes_with_party_pct) {
-		statistics["most-loyal"].push(members[i])
+		sorteredMembers.push(members[i])
 		i++
 	}
 
+	return sorteredMembers
 }
+
+statistics["most-loyal"] = generarArrayLoyal(true)
+statistics["least-loyal"] = generarArrayLoyal(false)
 
 function generarArrayEngaged() {
 	var limite = Math.round(members.length * 10) / 100
-	members.sort(function (a, b) {
-		return (a.missed_votes_pct - b.missed_votes_pct)
-	})
+	members.sort(
+		(a, b) => ascendente ? b.missed_votes_pct - a.missed_votes_pct : a.missed_votes_pct - b.missed_votes_pct)
 	var i = 0
-	while (i < limite || members[i].votes_with_party_pct == members[i - 1].votes_with_party_pct) {
-		statistics["least-engaged"].push(members[i])
+	while (i < limite || members[i].missed_votes_pct == members[i - 1].missed_votes_pct) {
+		sorteredMembers.push(members[i])
 		i++
 	}
-	members.sort(function (a, b) {
-		return (b.missed_votes_pct - a.missed_votes_pct)
-	})
-	i = 0
-	while (i < limite || members[i].votes_with_party_pct == members[i - 1].votes_with_party_pct) {
-		statistics["most-engaged"].push(members[i])
-		i++
-	}
+	return sorteredMembers
 
 }
 
