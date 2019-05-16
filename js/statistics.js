@@ -31,8 +31,9 @@ statistics["independents-average-votes-with-party"] = Math.round(independents.ma
 
 function generarArrayLoyal(ascendente) {
 	var limite = Math.round(members.length * 10) / 100
+	var sorteredMembers = []
 	members.sort(
-		(a, b) => ascendente ? b.votes_with_party_pct - a.votes_with_party_pct : a.votes_with_party_pct - bvotes_with_party_pct)
+		(a, b) => ascendente ? b.votes_with_party_pct - a.votes_with_party_pct : a.votes_with_party_pct - b.votes_with_party_pct)
 	i = 0
 	while (i < limite || members[i].votes_with_party_pct == members[i - 1].votes_with_party_pct) {
 		sorteredMembers.push(members[i])
@@ -45,8 +46,9 @@ function generarArrayLoyal(ascendente) {
 statistics["most-loyal"] = generarArrayLoyal(true)
 statistics["least-loyal"] = generarArrayLoyal(false)
 
-function generarArrayEngaged() {
+function generarArrayEngaged(ascendente) {
 	var limite = Math.round(members.length * 10) / 100
+	var sorteredMembers = []
 	members.sort(
 		(a, b) => ascendente ? b.missed_votes_pct - a.missed_votes_pct : a.missed_votes_pct - b.missed_votes_pct)
 	var i = 0
@@ -58,5 +60,5 @@ function generarArrayEngaged() {
 
 }
 
-generarArrayEngaged()
-generarArrayLoyal()
+statistics["most-engaged"] = generarArrayEngaged(true)
+statistics["least-engaged"] = generarArrayEngaged(false)
