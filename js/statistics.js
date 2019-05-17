@@ -34,7 +34,7 @@ function generarArrayLoyal(ascendente) {
 	var limite = Math.round(members.length * 10) / 100
 	var sorteredMembers = []
 	members.sort((a, b) => ascendente ? b.votes_with_party_pct - a.votes_with_party_pct : a.votes_with_party_pct - b.votes_with_party_pct)
-	i = 0
+	var i = 0
 	while (i < limite || members[i].votes_with_party_pct == members[i - 1].votes_with_party_pct) {
 		sorteredMembers.push(members[i])
 		i++
@@ -78,25 +78,27 @@ function generarTabla(key1, key2, page) {
 	htmlTablaCantidad += "<td>" + statistics["number-of-independents"] + "</td>"
 	htmlTablaCantidad += "<td>" + statistics["independents-average-votes-with-party"] + "</td>"
 	htmlTablaCantidad += "</tr>"
+	htmlTablaCantidad += "<td>Total</td>"
+	htmlTablaCantidad += "<td>" + statistics["total"] + "</td>"
+	htmlTablaCantidad += "<td>" + statistics["total-average"] + "</td>"
+	htmlTablaCantidad += "</tr>"
 
 	document.getElementById("tabla-cantidad").innerHTML = htmlTablaCantidad
 
-	document.getElementById("tabla1").innerHTML = statistics[key1].map(element => {
+	document.getElementById("tabla2").innerHTML = statistics[key1].map(element => {
 		var tabla1 = ""
 		tabla1 += "<tr><td>" + element.first_name
 		element.middle_name == null ? tabla1 += " " : tabla1 += " " + element.middle_name + " "
 		tabla1 += element.last_name + "</a></td>"
-		page = true ? tabla1 += "<td>" + element.missed_votes + "</td><td>" + element.missed_votes_pct + "</td>"
-			: tabla1 += "<td>" + element.total_votes + "</td><td>" + element.votes_with_party_pct + "</td>"
+		page? tabla1 += "<td>" + element.missed_votes + "</td><td>" + element.missed_votes_pct + "</td>" : tabla1 += "<td>" + (element.total_votes - element.missed_votes) + "</td><td>" + element.votes_with_party_pct + "</td>"
 		return tabla1
 	}).join("")
-	document.getElementById("tabla2").innerHTML = statistics[key2].map(element => {
+	document.getElementById("tabla1").innerHTML = statistics[key2].map(element => {
 		var tabla2 = ""
 		tabla2 += "<tr><td>" + element.first_name
 		element.middle_name == null ? tabla2 += " " : tabla2 += " " + element.middle_name + " "
 		tabla2 += element.last_name + "</a></td>"
-		page = true ? tabla2 += "<td>" + element.missed_votes + "</td><td>" + element.missed_votes_pct + "</td>"
-			: tabla2 += "<td>" + element.total_votes + "</td><td>" + element.votes_with_party_pct + "</td>"
+		page? tabla2 += "<td>" + element.missed_votes + "</td><td>" + element.missed_votes_pct + "</td>" : tabla2 += "<td>" + (element.total_votes - element.missed_votes) + "</td><td>" + element.votes_with_party_pct + "</td>"
 		return tabla2
 	}).join("")
 }

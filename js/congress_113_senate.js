@@ -1110,8 +1110,8 @@ var data = {
                 "state": "ME",
                 "senate_class": "2",
                 "state_rank": "",
-                "lis_id": "S252"
-                ,"missed_votes_pct": 0.00,
+                "lis_id": "S252",
+                "missed_votes_pct": 0.00,
                 "votes_with_party_pct": 59.67
               },
                           {
