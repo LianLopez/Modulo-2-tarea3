@@ -67,22 +67,7 @@
 					<th>% Voted with Prty</th>
 				</tr>
 			</thead>
-			<tbody>
-				<tr>
-					<td>Republican</td>
-					<td>--</td>
-					<td>--</td>
-				</tr>
-				<tr>
-					<td>Democrat</td>
-					<td>--</td>
-					<td>--</td>
-				</tr>
-				<tr>
-					<td>Independent</td>
-					<td>--</td>
-					<td>--</td>
-				</tr>
+			<tbody id="tabla-cantidad">
 			</tbody>
 		</table>
 
@@ -95,37 +80,7 @@
 					<th>% Party Votes</th>
 				</tr>
 			</thead>
-			<tbody>
-				<tr>
-					<td>--</td>
-					<td>--</td>
-					<td>--</td>
-				</tr>
-				<tr>
-					<td>--</td>
-					<td>--</td>
-					<td>--</td>
-				</tr>
-				<tr>
-					<td>--</td>
-					<td>--</td>
-					<td>--</td>
-				</tr>
-				<tr>
-					<td>--</td>
-					<td>--</td>
-					<td>--</td>
-				</tr>
-				<tr>
-					<td>--</td>
-					<td>--</td>
-					<td>--</td>
-				</tr>
-				<tr>
-					<td>--</td>
-					<td>--</td>
-					<td>--</td>
-				</tr>
+			<tbody id="tabla1">
 			</tbody>
 		</table>
 
@@ -138,46 +93,19 @@
 					<th>% Party Votes</th>
 				</tr>
 			</thead>
-			<tbody>
-				<tr>
-					<td>--</td>
-					<td>--</td>
-					<td>--</td>
-				</tr>
-				<tr>
-					<td>--</td>
-					<td>--</td>
-					<td>--</td>
-				</tr>
-				<tr>
-					<td>--</td>
-					<td>--</td>
-					<td>--</td>
-				</tr>
-				<tr>
-					<td>--</td>
-					<td>--</td>
-					<td>--</td>
-				</tr>
-				<tr>
-					<td>--</td>
-					<td>--</td>
-					<td>--</td>
-				</tr>
-				<tr>
-					<td>--</td>
-					<td>--</td>
-					<td>--</td>
-				</tr>
-				<tr>
-					<td>--</td>
-					<td>--</td>
-					<td>--</td>
-				</tr>
+			<tbody id="tabla2">
 			</tbody>
 		</table>
 
 	</div>
+	<script src="js/congress_113_house.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/statistics.js"></script>
+	<script>
+			window.onload = function(){
+				generarTabla("least-loyal", "most-loyal", false);		
+			}
+		</script>
 </body>
 
 </html>

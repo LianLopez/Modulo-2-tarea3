@@ -75,22 +75,7 @@
 						<th>% Voted with Prty</th>
 					</tr>
 				</thead>
-				<tbody>
-					<tr>
-						<td>Republican</td>
-						<td>--</td>
-						<td>--</td>
-					</tr>
-					<tr>
-						<td>Democrat</td>
-						<td>--</td>
-						<td>--</td>
-					</tr>
-					<tr>
-						<td>Independent</td>
-						<td>--</td>
-						<td>--</td>
-					</tr>
+				<tbody id="tabla-cantidad">
 				</tbody>
 			</table>
 
@@ -103,37 +88,7 @@
 						<th>% Missed</th>
 					</tr>
 				</thead>
-				<tbody>
-					<tr>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-					</tr>
-					<tr>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-					</tr>
-					<tr>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-					</tr>
-					<tr>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-					</tr>
-					<tr>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-					</tr>
-					<tr>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-					</tr>
+				<tbody id="tabla1">
 				</tbody>
 			</table>
 
@@ -146,42 +101,7 @@
 						<th>% Missed</th>
 					</tr>
 				</thead>
-				<tbody>
-					<tr>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-					</tr>
-					<tr>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-					</tr>
-					<tr>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-					</tr>
-					<tr>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-					</tr>
-					<tr>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-					</tr>
-					<tr>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-					</tr>
-					<tr>
-						<td>--</td>
-						<td>--</td>
-						<td>--</td>
-					</tr>
+				<tbody id="tabla2">
 				</tbody>
 			</table>
 
@@ -190,7 +110,12 @@
 	<script src="js/congress_113_senate.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/statistics.js"></script>
-	
+	<script>
+		window.onload = function(){
+			generarTabla("least-engaged", "most-engaged", true);		
+		}
+	</script>
+
 </body>
 
 </html>
