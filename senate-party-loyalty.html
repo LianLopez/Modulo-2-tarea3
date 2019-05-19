@@ -2,110 +2,109 @@
 <html lang="en">
 
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-	</script>
-	<link rel="stylesheet" href="css/style.css">
-	<title>Senate - party loyalty</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Senate - party loyalty</title>
 </head>
 
 <body>
-	<nav>
-		<div>
-			<div>
-				<a href="#">TGIF</a>
-			</div>
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li>
-					<a href="#">Congress 113</a>
-					<ul>
-						<li><a href="#">Senate</a></li>
-						<li><a href="#">House</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">Attendance</a></li>
-				<ul>
-					<li><a href="#">Senate</a></li>
-					<li><a href="#">House</a></li>
-				</ul>
-				</li>
-				<li>
-					<a href="#">Party Loyalty</a>
-					<ul>
-						<li><a href="#">Senate</a></li>
-						<li><a href="#">House</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-	</nav>
-
-
-	<header>
-		<div>
-		</div>
-	</header>
-	<!--Table container-->
-	<div>
-		<h2>Party Loyalty</h2>
-		<p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively, tend
-			to be the most faithful in voting for their party's nominee for office and legislation that backs their party's
-			agenda. </p>
-
-		<h2>Senate at a glance</h2>
-		<table>
-			<thead>
-				<tr>
-					<th>Party</th>
-					<th>Number of Reps</th>
-					<th>% Voted with Prty</th>
-				</tr>
-			</thead>
-			<tbody id="tabla-cantidad">
-			</tbody>
-		</table>
-
-		<h2>Least Loyal (Bottom 10% of Party)</h2>
-		<table>
-			<thead>
-				<tr>
-					<th>Name</th>
-					<th>Number Party Votes</th>
-					<th>% Party Votes</th>
-				</tr>
-			</thead>
-			<tbody id="tabla1">
-			</tbody>
-		</table>
-
-		<h2>Most Loyal (Top 10% of Party)</h2>
-		<table>
-			<thead>
-				<tr>
-					<th>Name</th>
-					<th>Number Party Votes</th>
-					<th>% Party Votes</th>
-				</tr>
-			</thead>
-			<tbody id="tabla2">
-			</tbody>
-		</table>
-
-	</div>
-	<script src="js/congress_113_senate.js"></script>
-	<script src="js/main.js"></script>
-	<script src="js/statistics.js"></script>
-	<script>
-			window.onload = function(){
-				generarTabla("least-loyal", "most-loyal", false);		
-			}
-		</script>
+    <div id="container">
+        <header class="wrapper">
+            <div class="item1">
+                <a href="index-html"><img src="img/WhatsApp Image 2019-04-22 at 12.01.11.jpeg" alt="TGIF-logo" class="img-fluid"></a>
+            </div>
+            <div class="item2">
+                <a href="mailto:info@tgif.net">info@tgif.net</a>
+            </div>
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Congress 113
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="senate.html">Senate</a>
+                            <a class="dropdown-item" href="house.html">House</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Attendance</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item " href="senate-attendance.html">Senate</a></li>
+                            <li><a class="dropdown-item" href="house-attendance.html">House</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Party loyalty</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item active" href="#">Senate</a></li>
+                            <li><a class="dropdown-item" href="house-party-loyalty.html">House</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!--Table container-->
+        <div>
+            <h2>Party Loyalty</h2>
+            <p class="text-justify">Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively, tend
+                to be the most faithful in voting for their party's nominee for office and legislation that backs their party's
+                agenda. </p>
+            <h2>Senate at a glance</h2>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Party</th>
+                        <th>Number of Reps</th>
+                        <th>% Voted with Prty</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-cantidad">
+                </tbody>
+            </table>
+            <h2>Least Loyal (Bottom 10% of Party)</h2>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>Number Party Votes</th>
+                        <th>% Party Votes</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla1">
+                </tbody>
+            </table>
+            <h2>Most Loyal (Top 10% of Party)</h2>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>Number Party Votes</th>
+                        <th>% Party Votes</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla2">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="js/congress_113_senate.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/statistics.js"></script>
+    <script>
+    window.onload = function() {
+        generarTabla("least-loyal", "most-loyal", false);
+    }
+    </script>
 </body>
 
 </html>

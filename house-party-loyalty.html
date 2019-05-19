@@ -14,53 +14,60 @@
 </head>
 
 <body>
-	<nav>
-		<div>
-			<div>
-				<a href="#">TGIF</a>
+	<div id="container">
+	<header class="wrapper">
+			<div class="item1">
+					<a href="index-html"><img src="img/WhatsApp Image 2019-04-22 at 12.01.11.jpeg" alt="TGIF-logo" class="img-fluid"></a>
 			</div>
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li>
-					<a href="#">Congress 113</a>
-					<ul>
-						<li><a href="#">Senate</a></li>
-						<li><a href="#">House</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">Attendance</a></li>
-				<ul>
-					<li><a href="#">Senate</a></li>
-					<li><a href="#">House</a></li>
+			<div class="item2">
+				<a href="mailto:info@tgif.net">info@tgif.net</a>
+			</div>
+		</header>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">
+							Congress 113
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="senate.html">Senate</a>
+							<a class="dropdown-item" href="house.html">House</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Attendance</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item" href="senate-attendance.html">Senate</a></li>
+							<li><a class="dropdown-item" href="house-attendance.html">House</a></li>
+						</ul>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Party loyalty</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item" href="senate-party-loyalty.html">Senate</a></li>
+							<li><a class="dropdown-item active" href="#">House</a></li>
+						</ul>
+					</li>
 				</ul>
-				</li>
-				<li>
-					<a href="#">Party Loyalty</a>
-					<ul>
-						<li><a href="#">Senate</a></li>
-						<li><a href="#">House</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-	</nav>
-
-
-	<header>
-		<div>
-		</div>
-	</header>
+			</div>
+		</nav>
 	<!--Table container-->
 	<div>
 		<h2>Party Loyalty</h2>
-		<p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively, tend
+		<p class="text-justify">Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively, tend
 			to be the most faithful in voting for their party's nominee for office and legislation that backs their party's
 			agenda. </p>
 
 		<h2>Senate at a glance</h2>
-		<table>
-			<thead>
+		<table class="table">
+			<thead class="thead-dark">
 				<tr>
 					<th>Party</th>
 					<th>Number of Reps</th>
@@ -72,8 +79,8 @@
 		</table>
 
 		<h2>Least Loyal (Bottom 10% of Party)</h2>
-		<table>
-			<thead>
+		<table class="table">
+			<thead class="thead-dark">
 				<tr>
 					<th>Name</th>
 					<th>Number Party Votes</th>
@@ -85,8 +92,8 @@
 		</table>
 
 		<h2>Most Loyal (Top 10% of Party)</h2>
-		<table>
-			<thead>
+		<table class="table">
+			<thead class="thead-dark">
 				<tr>
 					<th>Name</th>
 					<th>Number Party Votes</th>
@@ -97,6 +104,7 @@
 			</tbody>
 		</table>
 
+	</div>
 	</div>
 	<script src="js/congress_113_house.js"></script>
 	<script src="js/main.js"></script>
